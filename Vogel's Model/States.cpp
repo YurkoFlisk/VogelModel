@@ -134,8 +134,8 @@ StateAnim::StateAnim(Context* context)
 	animLengthL->setPosition(0, curY);
 	m_animLengthEB = tgui::EditBox::create();
 	m_animLengthEB->setPosition(GUI_WIDTH / 2, curY);
-	m_animLengthEB->setInputValidator(tgui::EditBox::Validator::UInt);
-	m_animLengthEB->setMaximumCharacters(3);
+	m_animLengthEB->setInputValidator(tgui::EditBox::Validator::Float);
+	m_animLengthEB->setMaximumCharacters(10);
 	layout->add(animLengthL);
 	layout->add(m_animLengthEB);
 	curY += std::max(animLengthL->getSize().y, m_animLengthEB->getSize().y) + GUI_GAP;
@@ -199,6 +199,7 @@ StateAnim::StateAnim(Context* context)
 
 	m_animation = new IncreasingAngleAnimation(m_context->window.getView().getCenter());
 	m_animLengthEB->setDefaultText(std::to_string(m_animation->getAnimLength()));
+	m_animLengthEB->setText(m_animLengthEB->getDefaultText());
 
 	for (const auto& [param, editor] : m_paramRangeEditors)
 	{
