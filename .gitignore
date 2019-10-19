@@ -1,0 +1,16 @@
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+.vs/
+x64/
+x86/
+ipch/
+Generated\ Files/
+*.opensdf
+*.sdf
+*.suo
+*.user
+*.obj
+*.pch
+*.pdb
+*.log
